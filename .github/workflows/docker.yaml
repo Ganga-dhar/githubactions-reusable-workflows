@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - dev
+      - secure-demo
 
 jobs:
   trivy:
