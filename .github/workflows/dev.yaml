@@ -11,3 +11,4 @@ jobs:
 
     with:
       environment: dev
+      version: 1.0.0
