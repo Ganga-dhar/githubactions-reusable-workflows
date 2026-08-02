@@ -1,0 +1,26 @@
+name: Trivy Scan--Dokcer image
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  trivy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: |
+          docker build -t trivy-demo:latest .
+
+      - name: Scan Docker Image
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: trivy-demo:latest
+          format: table
+          severity: HIGH,CRITICAL
+          exit-code: 1
