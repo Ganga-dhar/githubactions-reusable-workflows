@@ -3,11 +3,11 @@ name: Deploy Dev
 on:
   push:
     branches:
-      - develop
+      - dev
 
 jobs:
   deploy:
-    uses: ./.github/workflows/deploy.yml
+    uses: ./.github/workflows/reusable-deploy.yml
 
     with:
       environment: dev
