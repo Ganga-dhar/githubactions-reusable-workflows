@@ -1,0 +1,18 @@
+# .github/workflows/deploy.yml
+
+name: Reusable Deployment
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: |
+          echo "Deploying to ${{ inputs.environment }}"
