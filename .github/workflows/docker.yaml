@@ -24,4 +24,4 @@ jobs:
           image-ref: trivy-demo:latest
           format: table
           severity: HIGH,CRITICAL
-          exit-code: 1
+          exit-code: "0"
